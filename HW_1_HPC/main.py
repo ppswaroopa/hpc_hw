@@ -1,5 +1,4 @@
 import numpy as np
-import sys
 
 
 # Question 1
@@ -124,4 +123,127 @@ new_set = {x.replace('', '').replace('', '') for x in output}
 print(sorted(new_set))
 
 
+# Question 25
 
+class Question25:
+    name = "Person"
+
+    def __init__(self, name=None):
+        # self.name is the instance parameter
+        self.name = name
+
+
+daniel = Question25("Daniel")
+print("%s name is %s" % (Question25.name, daniel.name))
+
+jackie = Question25()
+jackie.name = "Jackie"
+print("%s name is %s" % (Question25.name, jackie.name))
+
+# Question 36
+
+
+ques36 = dict()
+for t in range(1, 21):
+    ques36[t] = t ** 2
+for u in ques36.keys():
+    print(u)
+
+# Question 37
+
+ques37 = list()
+for v in range(1, 21):
+    ques37.append(v)
+print(ques37)
+
+# Question 43
+
+ques43 = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+ans43 = list()
+for w in range(len(ques43)):
+    if ques43[w] % 2 == 0:
+        ans43.append(ques43[w])
+ans43_tup = tuple(ans43)
+print(ans43_tup)
+
+
+# Question 51
+
+class American(object):
+    pass
+
+
+class NewYorker(American):
+    pass
+
+
+anAmerican = American()
+aNewYorker = NewYorker()
+
+
+# Question 53
+
+class Rectangle(object):
+    def __init__(self, l, w):
+        self.length = l
+        self.width = w
+
+    def area(self):
+        return self.length * self.width
+
+
+ques53 = Rectangle(2, 10)
+print(ques53.area())
+
+
+# Question 54
+
+class Shape(object):
+    def __init__(self):
+        pass
+
+    def area(self):
+        return 0
+
+
+class Square(Shape):
+    def __init__(self, l):
+        Shape.__init__(self)
+        self.length = l
+
+    def area(self):
+        return self.length * self.length
+
+
+ques54 = Square(3)
+print(ques54.area())
+
+
+# Question 56
+
+def throws():
+    return 5 / 0
+
+
+try:
+    throws()
+except ZeroDivisionError:
+    print("division by zero!")
+
+
+# Question 94
+
+
+def ques94(qu):
+    ans94 = []
+    preserve = set()
+    for item in qu:
+        if item not in preserve:
+            preserve.add(item)
+            ans94.append(item)
+
+    return ans94
+
+
+li = [12, 24, 35, 24, 88, 120, 155, 88, 120, 155]
+print(ques94(li))
