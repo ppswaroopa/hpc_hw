@@ -7,13 +7,13 @@ def q1():
     sev_by_fiv = []
     for i in range(2000, 3201):
         if i % 7 == 0 and i % 5 != 0:
-            sev_by_fiv.append(i)
+            sev_by_fiv.append(str(i))
     return sev_by_fiv
 
 
 q1_ans = q1()
-for j in range(len(q1_ans)):
-    print(q1_ans[j], ',', end=" ")
+print("All numbers divisible by 7 but are not multiple of 5 from 2000-3000\n")
+print(','.join(q1_ans), '\n')
 
 
 # Question 2
@@ -30,7 +30,7 @@ def q2(n):
         return f
 
 
-fact = int(input("Enter a number: \n"))
+fact = int(input("Enter a number to get the factorial of it: \n"))
 print('Factorial of number', fact, 'is', q2(fact))
 
 
@@ -43,11 +43,11 @@ def q3(num):
     return gen_dict
 
 
-print(q3(int(input("Enter a number \n"))))
+print(q3(int(input("Enter a number to generate a dictionary \n"))))
 
 # Question 4
 
-in_list = input("Enter comma separated values: \n").split(',')
+in_list = input("Enter comma separated values to get a tuple with a list: \n").split(',')
 out_tuple = tuple(in_list)
 print(in_list)
 print(out_tuple)
@@ -58,7 +58,7 @@ print(out_tuple)
 class QuestionFive:
 
     def getString(self):
-        return str(input("Enter string: \n"))
+        return str(input("Enter string to test the class implementation: \n"))
 
     def printString(self, var):
         print(var.upper())
@@ -70,20 +70,20 @@ ques5.printString(printing)
 
 # Question 6
 
-ques6 = input("Enter comma separated value: \n").split(',')
+ques6 = input("Enter comma separated values to return a value using a formula: \n").split(',')
 C = 50
 H = 30
 ans6 = []
 for l in range(len(ques6)):
     q = np.sqrt((2 * C * int(ques6[l])) / H)
-    ans6.append(int(q))
-for m in range(len(ans6)):
-    print(ans6[m], ',', end=" ")
+    ans6.append(str(int(q)))
+
+print(','.join(ans6))
 
 # Question 7
 
 
-ques7 = input("\nEnter two comma separated value: \n").split(',')
+ques7 = input("\nEnter two comma separated value to return a matrix: \n").split(',')
 ans7 = []
 for n in range(int(ques7[0])):
     t = []
@@ -94,16 +94,14 @@ print(ans7)
 
 # Question 8
 
-
-ques8 = input("\nEnter comma separated words: \n")
-split_words = ques8.split()
-split_words.sort()
-for split_words in split_words:
-    print(split_words, ',', end=" ")
+print("Enter comma separated words to sort them alphabetically:\n")
+ques8 = [s for s in input().split(',')]
+ques8.sort()
+print(','.join(ques8))
 
 # Question 9
 
-print('\nEnter lines: \n')
+print('\nEnter lines to capitalize: \n')
 lines = []
 while True:
     line = input()
@@ -116,7 +114,7 @@ print(ques9.upper())
 
 # Question 10
 
-ques10 = input("Enter input:\n")
+ques10 = input("Enter whitespace separated words to sort and remove duplicates:\n")
 output = ques10.split()
 
 new_set = {x.replace('', '').replace('', '') for x in output}
@@ -177,8 +175,8 @@ class NewYorker(American):
     pass
 
 
-anAmerican = American()
-aNewYorker = NewYorker()
+ini_americ = American()
+ini_newy = NewYorker()
 
 
 # Question 53
